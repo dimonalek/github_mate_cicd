@@ -1,4 +1,5 @@
-name: Workflow initiated by ${{ github.actor }}
+name: PR Verification  # Статична назва самого workflow в меню ліворуч
+run-name: Workflow initiated by ${{ github.actor }}  # Динамічна назва конкретного запуску з іменем користувача
 
 on:
   pull_request:
@@ -23,7 +24,7 @@ jobs:
         run: |
           echo "Репозиторій: ${{ github.repository }}"
           echo "Цільова гілка (Base branch): ${{ github.base_ref }}"
-          echo "Гілка з мінflow (Head branch): ${{ github.head_ref }}"
+          echo "Гілка з кодом (Head branch): ${{ github.head_ref }}"
 
       - name: Show event that triggered the workflow
         run: |
